@@ -140,10 +140,8 @@
 
 
 
-
-
-
-
+\definecolor{myblue}{HTML}{dcecf8}
+\definecolor{mydarkerblue}{HTML}{2573b1}
 
 
 % set the basic colors
@@ -162,20 +160,20 @@
 \setbeamercolor{item projected}{fg=white,bg=black}
 
 % set colors for blocks
-\setbeamercolor{block title}{fg=black,bg=white}
+\setbeamercolor{block title}{fg=black,bg=myblue}
 \setbeamercolor{block body}{fg=black,bg=white}
 
 % set colors for alerted blocks (blocks with frame)
-\setbeamercolor{block alerted title}{fg=white,bg=black}
+\setbeamercolor{block alerted title}{fg=white,bg=mydarkblue}
 \setbeamercolor{block alerted body}{fg=black,bg=white}
 
 % set the fonts
-\setbeamerfont{section in head/foot}{series=\rmfamily, shape=\scshape}
-\setbeamerfont{block title}{shape=\scshape}
-\setbeamerfont{block alerted title}{shape=\scshape}
-\setbeamerfont{frametitle}{shape=\scshape}
-\setbeamerfont{frametitle}{size=\Large, shape=\scshape}
-\setbeamerfont{block body}{series=\rmfamily}
+% \setbeamerfont{section in head/foot}{series=\rmfamily, shape=\scshape}
+% \setbeamerfont{block title}{shape=\scshape}
+% \setbeamerfont{block alerted title}{shape=\scshape}
+% \setbeamerfont{frametitle}{shape=\scshape}
+% \setbeamerfont{frametitle}{size=\Large, shape=\scshape}
+% \setbeamerfont{block body}{series=\rmfamily}
 
 % set some beamer theme options
 \setbeamertemplate{title page}[default][colsep=-4bp,rounded=true]
@@ -200,9 +198,7 @@
 %==============================================================================
 % build the poster title
 %==============================================================================
-\definecolor{myblue}{HTML}{dcecf8}
-\definecolor{mydarkerblue}{HTML}{2573b1}
-\setbeamercolor{titlecolor}{fg=mydarkerblue,bg=myblue}
+\setbeamercolor{titlecolor}{fg=black,bg=myblue}
 
 \setbeamertemplate{headline}{
 \vspace{-1.2cm}
@@ -215,7 +211,6 @@
 		\usebeamercolor{title in headline}{\color{fg}\fontsize{115}{0}{\textbf{\inserttitle}}\\[3ex]}
     	\usebeamercolor{author in headline}{\color{fg}\fontsize{80}{0}{\textbf{\insertauthor}}\\[1ex]}
 		\usebeamercolor{institute in headline}{\color{fg}\normalsize{\rmfamily\insertinstitute}\\[1ex]}
-		\vskip 1cm
  \tikzset{
   every overlay node/.style={
     draw=none,fill=none,rounded corners,anchor=north west,
@@ -228,29 +223,27 @@
 \def\tikzoverlay{%
    \tikz[baseline,overlay]\node[every overlay node]
 }%
-\tikzoverlay at (27cm,6cm) {\includegraphics[width=20cm]{img/MSU-wordmark}};
-\tikzoverlay at (-47cm,9.5cm) {\includegraphics[width=20cm]{img/puget-sound-logo}};
+\tikzoverlay at (25cm,7.25cm) {\includegraphics[width=26cm]{img/MSU-wordmark}};
+\tikzoverlay at (-51cm,12cm) {\includegraphics[width=26cm]{img/puget-sound-logo}};
 	\end{center}
    \end{column}
   \end{columns}
   \vspace{.15in}
  \end{beamercolorbox}
 \setbeamercolor{cboxb}{fg=white,bg=mydarkerblue}
-\begin{beamercolorbox}[wd=\textwidth,ht=4ex,colsep=0.15cm]{cboxb}\end{beamercolorbox}
+\begin{beamercolorbox}[wd=\textwidth,ht=2ex]{cboxb}\end{beamercolorbox}
 }
 
 % Block definition
 \setbeamertemplate{block begin}
 {
+\setbeamercolor{block title}{fg=black,bg=myblue}
   \par\vskip\medskipamount
-  \begin{beamercolorbox}[colsep*=0ex,dp={2ex},center]{block title}
-    \vskip-0.25cm
-    \usebeamerfont{block title}\Large\insertblocktitle
-    	\vskip1cm
+  \begin{beamercolorbox}[colsep*=0ex,dp={1.25ex},center]{block title}
+	\vskip0.05cm
+	\Large\textbf{\insertblocktitle}
   \end{beamercolorbox}
-  {\parskip0pt\par}
-  \ifbeamercolorempty[bg]{block title}
-  {}
+\vskip1.5cm
   {\ifbeamercolorempty[bg]{block body}{}{\nointerlineskip\vskip-0.5pt}}
   \usebeamerfont{block body}
   \vskip-0.5cm
@@ -267,19 +260,21 @@
 % Alert block definition (with frame)
 \setbeamertemplate{block alerted begin}
 {
-  \par\vskip\medskipamount
+\setbeamercolor{block alerted title}{fg=white,bg=mydarkerblue}
+\par\vskip\medskipamount
   \begin{beamercolorbox}[sep=0ex,rounded=true,center,dp={2ex}]{block alerted title}
-    \vskip0.01cm
-    \usebeamerfont{block title}\Large\insertblocktitle
+    \vskip-0.3cm
+    \textbf{\insertblocktitle}
+    \vskip-1.2cm
   \end{beamercolorbox}
+  \vskip-0.3cm
   {\parskip0pt\par}
   \usebeamerfont{block body}
-  \vskip-0.8cm
-  \begin{beamercolorbox}[sep=0.5cm, rounded=true,center]{block alerted title}
+  \begin{beamercolorbox}[sep=0.25cm,rounded=true,center]{block alerted title}
   \setlength{\inboxwd}{\linewidth}
   \addtolength{\inboxwd}{-1cm}
-  \begin{beamercolorbox}[rounded=true,wd={\inboxwd},center]{block alerted body}
-  \setlength{\iinboxwd}{\inboxwd}
+\begin{beamercolorbox}[rounded=true,wd={\inboxwd},center]{block alerted body}
+ \setlength{\iinboxwd}{\inboxwd}
   \setlength{\inboxrule}{\inboxwd}
   \addtolength{\iinboxwd}{-0.5cm}
   \addtolength{\inboxrule}{0.5cm}

@@ -73,32 +73,48 @@
 %-----------------------------------------------------------
 
 \usepackage{graphicx}  % Required for including images
+\usepackage{amsmath} % assumes amsmath package installed
+\usepackage{amssymb}  % assumes amsmath package installed
+\usepackage[mathscr]{euscript}
+
+% \usepackage{caption}
+% \captionsetup{font={footnotesize,stretch=0.5}, labelfont=footnotesize}
+\setbeamerfont{caption}{size=\footnotesize}
+
 
 \usepackage{booktabs} % Top and bottom rules for tables
 \usepackage{setspace}
 \DeclarePairedDelimiter\abs{\lvert}{\rvert}%
 \DeclarePairedDelimiter\norm{\lVert}{\rVert}%
+\newcommand\Set[2]{\{\,#1\mid#2\,\}}
+
 %----------------------------------------------------------------------------------------
 %	TITLE SECTION
 %----------------------------------------------------------------------------------------
 
 \title{Plasticity and Evolvability in a Gene Regulatory Network Model} % Poster title
 
-\author{Matthew Moreno$^{1}$} % Author(s)
+\author{Matthew Andres Moreno$^{1}$} % Author(s)
 
 \institute{$^{1}$Michigan State University}% Institution(s)
 
 %----------------------------------------------------------------------------------------
 
-\begin{document}
-\addtobeamertemplate{block end}{}{\vspace*{2ex}} % White space under blocks
-\addtobeamertemplate{block alerted end}{}{\vspace*{2ex}} % White space under highlighted (alert) blocks
+\setbeamerfont{caption}{size=\footnotesize}
+\setbeamertemplate{caption}{%
+    \structure{\insertcaptionname~\insertcaptionnumber:}
+    \insertcaption\par
+}
 
-\setlength{\belowcaptionskip}{2ex} % White space under figures
+\begin{document}
+\addtobeamertemplate{block end}{}{\vspace*{1ex}} % White space under blocks1
+\addtobeamertemplate{block alerted end}{}{\vspace*{0.5ex}} % White space under highlighted (alert) blocks
+
+\setlength{\belowcaptionskip}{0ex} % White space under figures
 \setlength\belowdisplayshortskip{2ex} % White space under equations
 
 \begin{frame}[t] % The whole poster is enclosed in one beamer frame
-
+\vspace{-1ex}
 \begin{columns}[t] % The whole poster consists of three major columns, the second of which is split into two columns twice - the [t] option aligns each column's content to the top
 
 \begin{column}{\sepwid}\end{column} % Empty spacer column
@@ -108,24 +124,15 @@
 %----------------------------------------------------------------------------------------
 %	INTRODUCTION
 %----------------------------------------------------------------------------------------
-\vspace{-3.5ex}
-\begin{block}{Summary}
-\vspace{-2.5ex}
-{\small
-\input{tex/abstract.tex}
-}
-\vspace{-0.5ex}
-\begin{columns}[T, onlytextwidth]
-\column{0.65\textwidth}
-\includegraphics[width=\textwidth]{img/placeholder}
-\column{0.05\textwidth}
-\column{0.3\textwidth}
-\begin{spacing}{1.0}
-{\small
-\textit{Tetramorium caespitum} (Photo courtesy Alexander Wild.)}
-\end{spacing}
-\end{columns}
+\input{tex/introduction.tex}
+
+\begin{block}{References}
+{\tiny\bibliographystyle{abbrv}
+\bibliography{Mendeley}}
 \end{block}
+
+\input{tex/acknowledgement.tex}
+
 
 %------------------------------------------------
 
@@ -146,9 +153,12 @@
 %	IMPORTANT RESULT
 %----------------------------------------------------------------------------------------
 
-\vspace{-3.5ex}
 
 \input{tex/model.tex}
+
+\vspace{-1ex}
+
+\input{tex/experiment.tex}
 
 %----------------------------------------------------------------------------------------
 \vspace{-6ex}
@@ -173,49 +183,14 @@
 \begin{column}{\sepwid}\end{column} % Empty spacer column
 
 \begin{column}{\onecolwid} % The third column
-\vspace{-3.5ex}
-\begin{block}{Conclusion}
-\vspace{-2.5ex}
-\small{
-\input{tex/conclusion.tex}
-}
-\end{block}
 
+\input{tex/results.tex}
 
-%----------------------------------------------------------------------------------------
-%	REFERENCES
-%----------------------------------------------------------------------------------------
-\vspace{-3ex}
-\begin{block}{References}
-\vspace{-2.5ex}
-{\tiny\bibliographystyle{abbrv}
-\bibliography{Mendeley}}
-\end{block}
-
-%----------------------------------------------------------------------------------------
-%	ACKNOWLEDGEMENTS
-%----------------------------------------------------------------------------------------
-\vspace{-3.5ex}
-
-\begin{block}{Acknowledgements}
-\vspace{-2.5ex}
-\begin{spacing}{1.0}
-\scriptsize{\rmfamily{
-\input{tex/acknowledgement.tex}
-}}
-\end{spacing}
-\end{block}
-
+\input{tex/futurework.tex}
 
 \end{column} % End of the third column
 
 \end{columns} % End of all the columns in the poster
-\vspace{-1ex}
-\deemph{
-\noindent\makebox[\paperwidth]{\rule{1.1\paperwidth}{5pt}}}
-\vspace{-3.5ex}
-
-\input{tex/results.tex}
 
 \end{frame} % End of the enclosing frame
 
