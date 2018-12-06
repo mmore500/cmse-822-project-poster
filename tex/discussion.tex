@@ -1,8 +1,11 @@
+\vspace{-0.5ex}
 \begin{block}{Discussion}
-
+{\small
+\vspace{-1ex}
 \begin{itemize}
-\item Charm++ performs poorly
-\item 
+\item \textit{Charm++ strong scaling:} poor performance when Chares overload available CPUs
+\item \textit{MPI strong scaling:} near-ideal only down to a grid chunk size of around $256\times256$, perhaps due to breakdown of latency hiding
+\item \textit{weak scaling:} both implementations take a performance hit moving from single- to multi-node
 \end{itemize}
-
+}
 \end{block}
