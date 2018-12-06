@@ -1,0 +1,32 @@
+\begin{block}{Strong Scaling}
+\begin{columns}
+  \begin{column}{0.5\textwidth}
+\begin{alertblock}{\textbf{MPI}}
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{img/MPIStrong}
+  	\caption{
+    MPI implementation time to solution versus parallelism for a fixed problem size (a $2048\times2048$ grid).
+    Dashed line indicates the ideal scaling relationship.
+    Shaded area represents standard deviation of five replications for each observation.
+    }
+\end{figure}
+\end{alertblock}
+\end{column}
+\begin{column}{0.5\textwidth}
+\begin{alertblock}{\textbf{Charm++}}
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{img/CharmStrong}
+  	\caption{
+      Charm++ implementation time to solution versus parallelism for a fixed problem size (a $16\times16$ grid).
+      Dashed line denotes the ideal scaling relationship.
+      Shaded area represents standard deviation of five replications for each observation.
+    }
+\end{figure}
+\end{alertblock}
+\end{column}
+\end{columns}
+\end{block}
+
+\vspace{5ex}
